@@ -20,39 +20,47 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-emerald-900/10 bg-white/92 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-emerald-900/10 bg-white/90 shadow-[0_8px_30px_rgba(4,47,46,0.06)] backdrop-blur-xl">
       <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-5 px-5 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-3" aria-label="ERCI Market Corp home">
-          <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-950 text-base font-black text-white shadow-sm transition group-hover:bg-red-600">
+          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-950 text-lg font-black text-white shadow-[0_14px_28px_rgba(4,47,46,0.18)] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-red-600">
             E
           </span>
           <span className="leading-none">
-            <span className="block text-base font-black tracking-tight text-emerald-950">ERCI Market</span>
-            <span className="mt-1 block text-[10px] font-black uppercase tracking-[0.22em] text-red-600">Brooklyn, NY</span>
+            <span className="font-display block text-lg font-extrabold tracking-tight text-emerald-950">ERCI Market</span>
+            <span className="mt-1 block text-[10px] font-black uppercase tracking-[0.24em] text-red-600">Brooklyn, NY</span>
           </span>
         </Link>
 
         <div className="hidden items-center gap-7 text-sm font-bold text-emerald-950 md:flex">
-          <Link href="/" className="transition hover:text-red-600">{text[lang].home}</Link>
-          <Link href="/pages/about" className="transition hover:text-red-600">{text[lang].about}</Link>
-          <Link href="/pages/menu" className="transition hover:text-red-600">{text[lang].menu}</Link>
-          <Link href="/pages/contact" className="transition hover:text-red-600">{text[lang].contact}</Link>
+          <Link href="/" className="relative transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-red-600 after:transition-all hover:text-red-600 hover:after:w-full">{text[lang].home}</Link>
+          <Link href="/pages/about" className="relative transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-red-600 after:transition-all hover:text-red-600 hover:after:w-full">{text[lang].about}</Link>
+          <Link href="/pages/menu" className="relative transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-red-600 after:transition-all hover:text-red-600 hover:after:w-full">{text[lang].menu}</Link>
+          <Link href="/pages/contact" className="relative transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-red-600 after:transition-all hover:text-red-600 hover:after:w-full">{text[lang].contact}</Link>
         </div>
 
         <div className="flex items-center gap-2">
           <button
             onClick={toggleLang}
-            className="h-10 rounded-lg border border-emerald-900/15 px-3 text-xs font-black text-emerald-950 transition hover:border-red-600 hover:text-red-600"
+            className="h-11 rounded-lg border border-emerald-900/15 bg-white px-3 text-xs font-black text-emerald-950 shadow-sm transition hover:-translate-y-0.5 hover:border-red-600 hover:text-red-600"
             type="button"
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
-          <Link href="tel:+17188735127" className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-red-600 px-4 text-sm font-black text-white transition hover:bg-red-700">
+          <Link href="tel:+17188735127" className="shine-sweep relative inline-flex h-11 overflow-hidden rounded-lg bg-red-600 px-4 text-sm font-black text-white shadow-[0_16px_32px_rgba(220,38,38,0.22)] transition hover:-translate-y-0.5 hover:bg-red-700">
             <PhoneIcon />
             <span className="hidden sm:inline">{text[lang].call}</span>
           </Link>
         </div>
       </nav>
+      <div className="border-t border-emerald-900/8 bg-white/86 md:hidden">
+        <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 py-2 text-xs font-black text-emerald-950">
+          <Link href="/" className="rounded-full bg-emerald-50 px-4 py-2">{text[lang].home}</Link>
+          <Link href="/pages/about" className="rounded-full bg-emerald-50 px-4 py-2">{text[lang].about}</Link>
+          <Link href="/pages/menu" className="rounded-full bg-emerald-50 px-4 py-2">{text[lang].menu}</Link>
+          <Link href="/pages/contact" className="rounded-full bg-emerald-50 px-4 py-2">{text[lang].contact}</Link>
+        </div>
+      </div>
     </header>
   )
 }

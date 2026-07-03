@@ -5,9 +5,8 @@ import { useLang } from "@/lib/context/LanguageContext"
 
 const copy = {
   en: {
-    heroTitle: "A brighter market for Fulton Street.",
-    heroText:
-      "ERCI Market Corp brings Peruvian and Ecuadorian staples, fresh juices, hot breakfast sandwiches, and everyday groceries to the Brooklyn neighborhood from morning to late night.",
+    title: "Brooklyn's Latin market for the daily run.",
+    text: "Peruvian and Ecuadorian staples, fresh juices, hot breakfast sandwiches, coffee, snacks, produce, and essentials on Fulton Street.",
     menu: "Explore the menu",
     directions: "Get directions",
     contact: "Contact",
@@ -16,28 +15,28 @@ const copy = {
     hoursValue: "6:30 AM - 11:00 PM",
     breakfast: "Breakfast",
     breakfastValue: "7:00 AM - 2:00 PM",
+    delivery: "Free delivery",
+    deliveryValue: "Orders over $75",
     address: "3289 Fulton St, Brooklyn, NY 11208",
-    sectionProducts: "Shop the essentials, flavors, and quick stops people come back for.",
+    categoriesTitle: "Everything for the quick stop, the family table, and the taste of home.",
+    juiceTitle: "Fresh juices that look as good as they taste.",
+    juiceText: "Ask what fruit is best today, grab a smoothie with breakfast, or cool down with a citrus-green blend after work.",
+    deliveryTitle: "Useful neighborhood service, not website fluff.",
+    deliveryText: "Call the store for delivery on orders over $75, ask about free in-store coffee, or stop in any day from 6:30 AM to 11:00 PM.",
+    visitTitle: "Find us on Fulton Street.",
+    visitText: "Walk in for groceries, breakfast, drinks, and Latin pantry favorites.",
+    ticker: ["Peruvian staples", "Ecuadorian products", "Fresh juices", "Breakfast sandwiches", "Free coffee", "Delivery over $75"],
     products: [
-      ["Latin pantry", "Peruvian and Ecuadorian favorites, snacks, staples, and specialty ingredients."],
-      ["Fresh juice bar", "Real-fruit juices, smoothies, batidos, and everyday coffee made for the rush."],
-      ["Breakfast counter", "Bacon, egg and cheese, ham and cheese, BLT, and hot morning sandwiches."],
-      ["Daily groceries", "Produce, beverages, beer, candy, household basics, and neighborhood convenience."],
+      ["Latin pantry", "Peruvian and Ecuadorian favorites, snacks, grains, sauces, candy, and specialty ingredients."],
+      ["Juices and batidos", "Bright real-fruit blends, smoothies, coffee, and drinks ready for the commute."],
+      ["Hot breakfast", "Bacon egg and cheese, ham and cheese, BLT, and simple morning sandwiches."],
+      ["Daily groceries", "Produce, beverages, beer, household basics, and the convenience pieces people actually need."],
     ],
-    juiceTitle: "Fresh blends with a little momentum.",
-    juiceText:
-      "Pick up a smoothie with breakfast, grab a green citrus juice after work, or ask what fruit is best today.",
     juices: ["Potenciador Cerebral", "Verde Citrico", "Pepino Limon", "Zing de Jengibre"],
-    deliveryTitle: "Local, useful, and open when you need it.",
-    deliveryText:
-      "Free delivery is available on orders over $75, and customers can ask the team about free coffee in store.",
-    visitTitle: "Visit ERCI Market",
-    visitText: "Walk in, call ahead, or get directions to the store on Fulton Street.",
   },
   es: {
-    heroTitle: "Un mercado mas fresco para Fulton Street.",
-    heroText:
-      "ERCI Market Corp trae productos peruanos y ecuatorianos, jugos frescos, sandwiches calientes y abarrotes diarios al vecindario de Brooklyn desde la manana hasta la noche.",
+    title: "El mercado latino de Brooklyn para la compra diaria.",
+    text: "Productos peruanos y ecuatorianos, jugos frescos, sandwiches calientes, cafe, snacks, frutas y basicos en Fulton Street.",
     menu: "Ver el menu",
     directions: "Como llegar",
     contact: "Contacto",
@@ -46,43 +45,46 @@ const copy = {
     hoursValue: "6:30 AM - 11:00 PM",
     breakfast: "Desayuno",
     breakfastValue: "7:00 AM - 2:00 PM",
+    delivery: "Delivery gratis",
+    deliveryValue: "Ordenes sobre $75",
     address: "3289 Fulton St, Brooklyn, NY 11208",
-    sectionProducts: "Compra lo esencial, los sabores y las paradas rapidas que la comunidad busca.",
+    categoriesTitle: "Todo para la parada rapida, la mesa familiar y el sabor de casa.",
+    juiceTitle: "Jugos frescos que se ven tan bien como saben.",
+    juiceText: "Pregunta que fruta esta mejor hoy, pide un batido con desayuno o refrescate con una mezcla verde citrica.",
+    deliveryTitle: "Servicio util del vecindario, sin relleno.",
+    deliveryText: "Llama para delivery en ordenes mayores de $75, pregunta por cafe gratis en tienda o visita cualquier dia de 6:30 AM a 11:00 PM.",
+    visitTitle: "Encuentranos en Fulton Street.",
+    visitText: "Visitanos para abarrotes, desayuno, bebidas y favoritos de despensa latina.",
+    ticker: ["Productos peruanos", "Productos ecuatorianos", "Jugos frescos", "Sandwiches", "Cafe gratis", "Delivery sobre $75"],
     products: [
-      ["Despensa latina", "Favoritos peruanos y ecuatorianos, snacks, basicos e ingredientes especiales."],
-      ["Bar de jugos", "Jugos naturales, smoothies, batidos y cafe para todos los dias."],
-      ["Desayuno", "Bacon, huevo y queso, jamon y queso, BLT y sandwiches calientes."],
-      ["Abarrotes diarios", "Frutas, bebidas, cervezas, dulces, productos basicos y conveniencia local."],
+      ["Despensa latina", "Favoritos peruanos y ecuatorianos, snacks, granos, salsas, dulces e ingredientes especiales."],
+      ["Jugos y batidos", "Mezclas de fruta natural, smoothies, cafe y bebidas listas para llevar."],
+      ["Desayuno caliente", "Bacon huevo y queso, jamon y queso, BLT y sandwiches para la manana."],
+      ["Abarrotes diarios", "Frutas, bebidas, cervezas, basicos del hogar y conveniencia real para el vecindario."],
     ],
-    juiceTitle: "Mezclas frescas con energia.",
-    juiceText:
-      "Pide un batido con el desayuno, un jugo verde despues del trabajo o pregunta que fruta esta mejor hoy.",
     juices: ["Potenciador Cerebral", "Verde Citrico", "Pepino Limon", "Zing de Jengibre"],
-    deliveryTitle: "Local, util y abierto cuando lo necesitas.",
-    deliveryText:
-      "Delivery gratis en ordenes mayores de $75, y los clientes pueden preguntar por cafe gratis en la tienda.",
-    visitTitle: "Visita ERCI Market",
-    visitText: "Entra, llama antes, o abre las direcciones hacia la tienda en Fulton Street.",
   },
 }
 
-const photo =
-  "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80"
-const juicePhoto =
-  "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=1200&q=80"
+const images = {
+  produce: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1700&q=82",
+  juice: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=1200&q=82",
+  sandwich: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1000&q=82",
+  pantry: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1100&q=82",
+}
 
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none">
-      <path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
 
-function SparkIcon() {
+function MarkIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-      <path d="M12 3l2.2 6.8H21l-5.5 4 2.1 6.7L12 16.4 6.4 20.5l2.1-6.7L3 9.8h6.8L12 3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M4 12h16M12 4v16M7 7l10 10M17 7 7 17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   )
 }
@@ -90,123 +92,149 @@ function SparkIcon() {
 export default function HomePage() {
   const { lang } = useLang()
   const t = copy[lang]
+  const tickerItems = [...t.ticker, ...t.ticker]
 
   return (
-    <div className="space-y-20 pb-8">
-      <section className="grid min-h-[calc(100svh-92px)] items-center gap-10 py-8 lg:grid-cols-[1.02fr_0.98fr] lg:py-10">
-        <div className="max-w-2xl">
-          <h1 className="max-w-[12ch] text-5xl font-black leading-[0.94] text-emerald-950 sm:text-6xl lg:text-7xl">
-            {t.heroTitle}
-          </h1>
-          <p className="mt-7 max-w-xl text-lg leading-8 text-zinc-600">{t.heroText}</p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link href="/pages/menu" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-red-600 px-6 text-sm font-extrabold text-white shadow-[0_18px_40px_rgba(220,38,38,0.22)] transition hover:bg-red-700">
-              {t.menu}
-              <ArrowIcon />
-            </Link>
-            <Link href="/pages/contact" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-emerald-900/20 px-6 text-sm font-extrabold text-emerald-950 transition hover:border-emerald-800 hover:bg-emerald-50">
-              {t.directions}
-            </Link>
-          </div>
-          <div className="mt-10 grid max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-lg border border-emerald-900/10 bg-emerald-900/10 sm:grid-cols-3">
-            {[
-              [t.hours, t.hoursValue],
-              [t.breakfast, t.breakfastValue],
-              ["Fulton Street", t.address],
-            ].map(([label, value]) => (
-              <div key={label} className="bg-white p-5">
-                <p className="text-xs font-black uppercase tracking-[0.14em] text-red-600">{label}</p>
-                <p className="mt-2 text-sm font-bold leading-6 text-emerald-950">{value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="relative min-h-[530px] overflow-hidden rounded-lg bg-emerald-950 text-white shadow-2xl shadow-emerald-950/20">
-          <img src={photo} alt="Fresh produce and groceries at a neighborhood market" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/28 to-transparent" />
-          <div className="absolute left-6 right-6 top-6 flex items-center justify-between">
-            <div className="rounded-lg bg-white px-4 py-3 text-emerald-950 shadow-lg">
-              <p className="text-lg font-black leading-none">ERCI</p>
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-red-600">Market Corp</p>
+    <div className="overflow-hidden pb-10">
+      <section className="relative min-h-[calc(100svh-120px)] py-10 sm:py-14 lg:py-16">
+        <div className="absolute left-1/2 top-6 -z-10 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-yellow-200/40 blur-3xl" />
+        <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="animate-fade-up max-w-3xl">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-900/10 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-red-600 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-emerald-600" />
+              ERCI Market Corp
             </div>
-            <Link href="tel:+17188735127" className="rounded-lg bg-yellow-300 px-4 py-3 text-sm font-black text-emerald-950 shadow-lg">
-              {t.call}
-            </Link>
+            <h1 className="font-display max-w-[11ch] text-5xl font-extrabold leading-[0.88] tracking-tight text-emerald-950 sm:text-7xl lg:text-8xl">
+              {t.title}
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-zinc-600 sm:text-xl">{t.text}</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link href="/pages/menu" className="shine-sweep relative inline-flex h-14 overflow-hidden rounded-lg bg-red-600 px-7 text-sm font-black text-white shadow-[0_22px_44px_rgba(220,38,38,0.24)] transition hover:-translate-y-1 hover:bg-red-700">
+                <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                  {t.menu}
+                  <ArrowIcon />
+                </span>
+              </Link>
+              <Link href="/pages/contact" className="inline-flex h-14 items-center justify-center rounded-lg border border-emerald-900/20 bg-white px-7 text-sm font-black text-emerald-950 shadow-sm transition hover:-translate-y-1 hover:border-emerald-950 hover:bg-emerald-50">
+                {t.directions}
+              </Link>
+            </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-            <div className="max-w-sm rounded-lg bg-white/94 p-5 text-emerald-950 shadow-2xl backdrop-blur">
-              <p className="text-2xl font-black leading-tight">Peruvian, Ecuadorian, fresh, everyday.</p>
-              <p className="mt-3 text-sm font-semibold leading-6 text-zinc-600">{lang === "en" ? "A small market built around the daily rhythm of the neighborhood." : "Un mercado pequeno hecho para el ritmo diario del vecindario."}</p>
+
+          <div className="animate-fade-up animate-delay-1 relative min-h-[560px]">
+            <div className="absolute right-0 top-0 h-[72%] w-[88%] overflow-hidden rounded-[28px] bg-emerald-950 shadow-[0_30px_80px_rgba(4,47,46,0.28)]">
+              <img src={images.produce} alt="Fresh produce shelves at a neighborhood market" className="h-full w-full object-cover opacity-95 transition duration-700 hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/72 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/94 p-5 text-emerald-950 shadow-2xl backdrop-blur">
+                <p className="font-display text-3xl font-extrabold leading-tight">Peru, Ecuador, Brooklyn.</p>
+                <p className="mt-2 text-sm font-bold text-zinc-600">{t.address}</p>
+              </div>
+            </div>
+            <div className="float-soft absolute left-0 top-10 h-40 w-40 overflow-hidden rounded-2xl border-4 border-white bg-yellow-300 shadow-2xl sm:h-52 sm:w-52">
+              <img src={images.juice} alt="Colorful fresh juices" className="h-full w-full object-cover" />
+            </div>
+            <div className="absolute bottom-8 left-8 grid w-[82%] grid-cols-1 overflow-hidden rounded-2xl border border-emerald-900/10 bg-white shadow-[0_24px_70px_rgba(4,47,46,0.18)] sm:grid-cols-3">
+              {[
+                [t.hours, t.hoursValue],
+                [t.breakfast, t.breakfastValue],
+                [t.delivery, t.deliveryValue],
+              ].map(([label, value]) => (
+                <div key={label} className="border-b border-emerald-900/10 p-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
+                  <p className="text-[11px] font-black uppercase tracking-[0.18em] text-red-600">{label}</p>
+                  <p className="mt-2 text-sm font-black leading-6 text-emerald-950">{value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
-        <div>
-          <h2 className="text-4xl font-black leading-tight text-emerald-950 sm:text-5xl">{t.sectionProducts}</h2>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {t.products.map(([title, description]) => (
-            <article key={title} className="rounded-lg border border-emerald-900/10 bg-white p-6 shadow-sm">
-              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-300 text-emerald-950">
-                <SparkIcon />
-              </div>
-              <h3 className="text-xl font-black text-emerald-950">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-600">{description}</p>
-            </article>
+      <section className="-mx-5 border-y border-emerald-900/10 bg-emerald-950 py-4 text-white sm:-mx-6 lg:-mx-8">
+        <div className="ticker-track flex w-max gap-8 whitespace-nowrap">
+          {tickerItems.map((item, index) => (
+            <span key={`${item}-${index}`} className="inline-flex items-center gap-8 text-sm font-black uppercase tracking-[0.2em]">
+              {item}
+              <span className="h-2 w-2 rounded-full bg-yellow-300" />
+            </span>
           ))}
         </div>
       </section>
 
-      <section className="grid overflow-hidden rounded-lg bg-emerald-950 text-white lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="min-h-[360px]">
-          <img src={juicePhoto} alt="Fresh fruit juices served at the market" className="h-full min-h-[360px] w-full object-cover" />
+      <section className="py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+          <h2 className="animate-fade-up font-display text-4xl font-extrabold leading-[0.98] tracking-tight text-emerald-950 sm:text-6xl">{t.categoriesTitle}</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {t.products.map(([title, description], index) => (
+              <article key={title} className="group animate-fade-up rounded-2xl border border-emerald-900/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(4,47,46,0.12)]" style={{ animationDelay: `${index * 90}ms` }}>
+                <div className="mb-8 flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-300 text-emerald-950 transition group-hover:rotate-12 group-hover:bg-red-600 group-hover:text-white">
+                    <MarkIcon />
+                  </div>
+                  <span className="font-display text-4xl font-extrabold text-emerald-950/10">0{index + 1}</span>
+                </div>
+                <h3 className="font-display text-2xl font-extrabold text-emerald-950">{title}</h3>
+                <p className="mt-3 text-sm font-medium leading-6 text-zinc-600">{description}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="p-7 sm:p-10 lg:p-12">
-          <h2 className="max-w-xl text-4xl font-black leading-tight sm:text-5xl">{t.juiceTitle}</h2>
-          <p className="mt-5 max-w-lg text-base leading-7 text-emerald-50/78">{t.juiceText}</p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+      </section>
+
+      <section className="grid overflow-hidden rounded-[28px] bg-emerald-950 text-white shadow-[0_30px_90px_rgba(4,47,46,0.18)] lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="relative min-h-[420px]">
+          <img src={images.juice} alt="Fresh juices and fruit" className="h-full min-h-[420px] w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/50 to-transparent" />
+        </div>
+        <div className="p-7 sm:p-10 lg:p-14">
+          <h2 className="font-display max-w-xl text-4xl font-extrabold leading-tight sm:text-6xl">{t.juiceTitle}</h2>
+          <p className="mt-6 max-w-lg text-base font-medium leading-7 text-emerald-50/78">{t.juiceText}</p>
+          <div className="mt-9 grid gap-3 sm:grid-cols-2">
             {t.juices.map((juice) => (
-              <div key={juice} className="flex items-center justify-between rounded-lg border border-white/14 bg-white/7 px-4 py-4">
-                <span className="text-sm font-extrabold">{juice}</span>
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
+              <div key={juice} className="group flex items-center justify-between rounded-xl border border-white/14 bg-white/8 px-4 py-4 transition hover:-translate-y-0.5 hover:bg-white/14">
+                <span className="text-sm font-black">{juice}</span>
+                <span className="h-3 w-3 rounded-full bg-yellow-300 transition group-hover:scale-150" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="grid gap-5 rounded-lg border border-red-600/18 bg-red-50 p-6 sm:grid-cols-[1fr_auto] sm:items-center sm:p-8">
-        <div>
-          <h2 className="text-3xl font-black text-emerald-950">{t.deliveryTitle}</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600">{t.deliveryText}</p>
+      <section className="grid gap-5 py-20 lg:grid-cols-3">
+        <div className="rounded-[28px] bg-red-600 p-8 text-white shadow-[0_22px_70px_rgba(220,38,38,0.22)] lg:col-span-2">
+          <h2 className="font-display max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">{t.deliveryTitle}</h2>
+          <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-red-50/86">{t.deliveryText}</p>
+          <Link href="tel:+17188735127" className="mt-8 inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 py-4 text-sm font-black text-red-700 transition hover:-translate-y-1 hover:bg-yellow-200">
+            {t.call}
+          </Link>
         </div>
-        <Link href="tel:+17188735127" className="inline-flex h-12 items-center justify-center rounded-lg bg-emerald-950 px-6 text-sm font-black text-white transition hover:bg-emerald-900">
-          {t.call}
-        </Link>
+        <div className="overflow-hidden rounded-[28px] bg-yellow-300 shadow-[0_22px_70px_rgba(234,179,8,0.18)]">
+          <img src={images.sandwich} alt="Breakfast sandwich" className="h-52 w-full object-cover" />
+          <div className="p-7">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-red-700">{t.breakfast}</p>
+            <p className="font-display mt-3 text-3xl font-extrabold leading-tight text-emerald-950">{t.breakfastValue}</p>
+          </div>
+        </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+      <section className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <div>
-          <h2 className="text-4xl font-black text-emerald-950">{t.visitTitle}</h2>
-          <p className="mt-4 text-base leading-7 text-zinc-600">{t.visitText}</p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link href="https://maps.google.com/?q=3289+Fulton+St+Brooklyn+NY+11208" target="_blank" rel="noreferrer" className="inline-flex h-12 items-center justify-center rounded-lg bg-yellow-300 px-6 text-sm font-black text-emerald-950 transition hover:bg-yellow-200">
+          <h2 className="font-display text-4xl font-extrabold leading-tight text-emerald-950 sm:text-6xl">{t.visitTitle}</h2>
+          <p className="mt-5 max-w-xl text-base font-medium leading-7 text-zinc-600">{t.visitText}</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="https://maps.google.com/?q=3289+Fulton+St+Brooklyn+NY+11208" target="_blank" rel="noreferrer" className="inline-flex h-14 items-center justify-center rounded-lg bg-yellow-300 px-6 py-4 text-sm font-black text-emerald-950 transition hover:-translate-y-1 hover:bg-yellow-200">
               {t.directions}
             </Link>
-            <Link href="/pages/contact" className="inline-flex h-12 items-center justify-center rounded-lg border border-emerald-900/20 px-6 text-sm font-black text-emerald-950 transition hover:bg-emerald-50">
+            <Link href="/pages/contact" className="inline-flex h-14 items-center justify-center rounded-lg border border-emerald-900/20 px-6 py-4 text-sm font-black text-emerald-950 transition hover:-translate-y-1 hover:bg-emerald-50">
               {t.contact}
             </Link>
           </div>
         </div>
-        <div className="overflow-hidden rounded-lg border border-emerald-900/10">
+        <div className="overflow-hidden rounded-[28px] border border-emerald-900/10 shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
           <iframe
             title="Map to ERCI Market Corp"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"
             width="100%"
-            height="360"
+            height="390"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"

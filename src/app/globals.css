@@ -19,10 +19,104 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  color: #042f2e;
+  text-rendering: geometricPrecision;
 }
 
 ::selection {
   background: #fde047;
   color: #022c22;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display), var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-120%) skewX(-14deg);
+  }
+  to {
+    transform: translateX(220%) skewX(-14deg);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 700ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.animate-delay-1 {
+  animation-delay: 120ms;
+}
+
+.animate-delay-2 {
+  animation-delay: 240ms;
+}
+
+.animate-delay-3 {
+  animation-delay: 360ms;
+}
+
+.float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+.ticker-track {
+  animation: ticker 26s linear infinite;
+}
+
+.shine-sweep::after {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.38), transparent);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translateX(-120%) skewX(-14deg);
+}
+
+.shine-sweep:hover::after {
+  animation: shine 850ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
 }
