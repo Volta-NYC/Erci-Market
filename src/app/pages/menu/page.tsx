@@ -2,151 +2,63 @@
 
 import { useLang } from "@/lib/context/LanguageContext"
 
+const menu = {
+  en: {
+    title: "Menu and market favorites.",
+    subtitle: "Breakfast sandwiches, fresh fruit drinks, Latin products, and daily grocery essentials. Availability may vary by day.",
+    categories: [
+      ["Breakfast", "Served 7:00 AM - 2:00 PM", ["Bacon, Egg & Cheese Sandwich", "Ham & Cheese Sandwich", "Egg & Cheese Sandwich", "BLT Sandwich"]],
+      ["Fresh Juices", "Made fresh daily with real fruit", ["Potenciador Cerebral", "Verde Citrico", "Pepino Limon", "Zing de Jengibre"]],
+      ["Smoothies & Drinks", "Cold, fresh, and ready to go", ["Fresh Fruit Smoothies", "Batidos", "Coffee", "Beer & Beverages"]],
+      ["Latin Products", "Peruvian and Ecuadorian specialties", ["Peruvian Pantry Staples", "Ecuadorian Specialty Products", "Fresh Produce", "Snacks & Candy"]],
+    ],
+  },
+  es: {
+    title: "Menu y favoritos del mercado.",
+    subtitle: "Sandwiches de desayuno, bebidas de fruta natural, productos latinos y abarrotes diarios. La disponibilidad puede variar.",
+    categories: [
+      ["Desayuno", "De 7:00 AM a 2:00 PM", ["Sandwich de Tocino, Huevo y Queso", "Sandwich de Jamon y Queso", "Sandwich de Huevo y Queso", "Sandwich BLT"]],
+      ["Jugos Frescos", "Preparados diariamente con fruta natural", ["Potenciador Cerebral", "Verde Citrico", "Pepino Limon", "Zing de Jengibre"]],
+      ["Batidos y Bebidas", "Frias, frescas y listas", ["Batidos de Fruta Natural", "Batidos", "Cafe", "Cervezas y Bebidas"]],
+      ["Productos Latinos", "Especialidades peruanas y ecuatorianas", ["Productos Basicos Peruanos", "Productos Especiales Ecuatorianos", "Frutas y Verduras Frescas", "Snacks y Dulces"]],
+    ],
+  },
+}
+
 export default function MenuPage() {
   const { lang } = useLang()
-
-  const text = {
-    en: {
-      title: "Our Menu",
-      breakfastTitle: "Breakfast",
-      breakfastHours: "Served 7:00 AM – 2:00 PM",
-      breakfastItems: [
-        "Bacon, Egg & Cheese Sandwich",
-        "Ham & Cheese Sandwich",
-        "Egg & Cheese Sandwich",
-        "BLT Sandwich",
-      ],
-      juicesTitle: "Fresh Juices",
-      juicesDesc: "Made fresh daily with real fruit",
-      juicesItems: [
-        { name: "Potenciador Cerebral", desc: "Brain-boosting blend" },
-        { name: "Verde Cítrico", desc: "Green citrus blend" },
-        { name: "Pepino Limón", desc: "Cucumber lemon" },
-        { name: "Zing de Jengibre", desc: "Ginger zing" },
-      ],
-      smoothiesTitle: "Smoothies & Drinks",
-      smoothiesItems: [
-        "Fresh Fruit Smoothies",
-        "Batidos",
-        "Coffee",
-        "Beer & Beverages",
-      ],
-      produceTitle: "Latin Products",
-      produceDesc: "Authentic Peruvian & Ecuadorian specialty products",
-      produceItems: [
-        "Peruvian Pantry Staples",
-        "Ecuadorian Specialty Products",
-        "Fresh Produce",
-        "Snacks & Candy",
-      ],
-      note: "Menu items may vary. Ask our staff for today's availability.",
-    },
-    es: {
-      title: "Nuestro Menú",
-      breakfastTitle: "Desayuno",
-      breakfastHours: "De 7:00 AM a 2:00 PM",
-      breakfastItems: [
-        "Sándwich de Tocino, Huevo y Queso",
-        "Sándwich de Jamón y Queso",
-        "Sándwich de Huevo y Queso",
-        "Sándwich BLT",
-      ],
-      juicesTitle: "Jugos Frescos",
-      juicesDesc: "Preparados diariamente con fruta natural",
-      juicesItems: [
-        { name: "Potenciador Cerebral", desc: "Mezcla energizante" },
-        { name: "Verde Cítrico", desc: "Mezcla verde cítrica" },
-        { name: "Pepino Limón", desc: "Pepino con limón" },
-        { name: "Zing de Jengibre", desc: "Toque de jengibre" },
-      ],
-      smoothiesTitle: "Batidos y Bebidas",
-      smoothiesItems: [
-        "Batidos de Fruta Natural",
-        "Batidos",
-        "Café",
-        "Cervezas y Bebidas",
-      ],
-      produceTitle: "Productos Latinos",
-      produceDesc: "Productos especiales peruanos y ecuatorianos auténticos",
-      produceItems: [
-        "Productos Básicos Peruanos",
-        "Productos Especiales Ecuatorianos",
-        "Frutas y Verduras Frescas",
-        "Snacks y Dulces",
-      ],
-      note: "Los productos pueden variar. Pregunta a nuestro personal sobre la disponibilidad del día.",
-    },
-  }
-
-  const t = text[lang]
+  const t = menu[lang]
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-12 py-12">
+      <section className="max-w-4xl">
+        <h1 className="text-5xl font-black leading-tight text-emerald-950 sm:text-6xl">{t.title}</h1>
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">{t.subtitle}</p>
+      </section>
 
-      {/* Header */}
-      <h1 className="text-4xl font-bold">{t.title}</h1>
-
-      {/* Breakfast */}
-      <div className="bg-neutral-900 text-white rounded-2xl p-8 space-y-4">
-        <div>
-          <h2 className="text-2xl font-bold text-orange-500">{t.breakfastTitle}</h2>
-          <p className="text-neutral-400 text-sm">{t.breakfastHours}</p>
-        </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {t.breakfastItems.map((item) => (
-            <li key={item} className="flex items-center gap-2 text-neutral-300">
-              <span className="text-orange-500">✦</span> {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Fresh Juices */}
-      <div className="border border-neutral-200 rounded-2xl p-8 space-y-4">
-        <div>
-          <h2 className="text-2xl font-bold">{t.juicesTitle}</h2>
-          <p className="text-neutral-500 text-sm">{t.juicesDesc}</p>
-        </div>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {t.juicesItems.map((juice) => (
-            <div key={juice.name} className="bg-orange-50 rounded-xl p-4 space-y-1 text-center">
-              <p className="font-bold text-sm">{juice.name}</p>
-              <p className="text-neutral-500 text-xs">{juice.desc}</p>
+      <section className="grid gap-5 md:grid-cols-2">
+        {t.categories.map(([title, note, items], index) => (
+          <article key={title as string} className={`${index === 0 ? "bg-emerald-950 text-white" : "bg-white text-emerald-950"} rounded-lg border border-emerald-900/10 p-7 shadow-sm`}>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-black">{title}</h2>
+                <p className={`mt-2 text-sm font-semibold ${index === 0 ? "text-emerald-50/70" : "text-zinc-500"}`}>{note}</p>
+              </div>
+              <span className={`${index === 0 ? "bg-yellow-300 text-emerald-950" : "bg-red-600 text-white"} flex h-11 w-11 items-center justify-center rounded-lg text-sm font-black`}>
+                {index + 1}
+              </span>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Smoothies & Drinks */}
-      <div className="border border-neutral-200 rounded-2xl p-8 space-y-4">
-        <h2 className="text-2xl font-bold">{t.smoothiesTitle}</h2>
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {t.smoothiesItems.map((item) => (
-            <li key={item} className="flex items-center gap-2 text-neutral-600">
-              <span className="text-orange-500">✦</span> {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Latin Products */}
-      <div className="bg-orange-500 text-black rounded-2xl p-8 space-y-4">
-        <div>
-          <h2 className="text-2xl font-bold">{t.produceTitle}</h2>
-          <p className="text-sm">{t.produceDesc}</p>
-        </div>
-        <ul className="grid grid-cols-2 gap-3">
-          {t.produceItems.map((item) => (
-            <li key={item} className="flex items-center gap-2">
-              <span>✦</span> {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Note */}
-      <p className="text-center text-neutral-400 text-sm italic">{t.note}</p>
-
+            <ul className="mt-8 space-y-3">
+              {(items as string[]).map((item) => (
+                <li key={item} className={`flex items-center justify-between gap-4 border-t pt-3 text-sm font-bold ${index === 0 ? "border-white/14" : "border-emerald-900/10"}`}>
+                  <span>{item}</span>
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-yellow-300" />
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </section>
     </div>
   )
 }

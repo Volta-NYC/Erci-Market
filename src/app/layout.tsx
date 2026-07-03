@@ -5,7 +5,7 @@ import { LanguageProvider } from "@/lib/context/LanguageContext"
 
 export const metadata = {
   title: "Erci Market Corp",
-  description: "Your neighborhood market in Brooklyn, NY. Authentic Peruvian & Ecuadorian products, fresh juices, sandwiches, and more."
+  description: "A Brooklyn neighborhood market for Peruvian and Ecuadorian products, fresh juices, sandwiches, groceries, and daily essentials."
 }
 
 export default function RootLayout({
@@ -14,11 +14,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col">
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className="min-h-screen bg-white text-emerald-950 antialiased">
         <LanguageProvider>
           <Navbar />
-          <main className="flex-1 max-w-6xl mx-auto px-6 py-12">
+          <main className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
             {children}
           </main>
           <Footer />

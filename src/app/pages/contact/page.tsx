@@ -3,86 +3,91 @@
 import Link from "next/link"
 import { useLang } from "@/lib/context/LanguageContext"
 
+const content = {
+  en: {
+    title: "Come through Fulton Street.",
+    subtitle: "Open every day for groceries, breakfast, fresh drinks, and Latin market staples.",
+    call: "Call now",
+    directions: "Get directions",
+    cards: [
+      ["Address", "3289 Fulton St, Brooklyn, NY 11208"],
+      ["Phone", "(718) 873-5127"],
+      ["Hours", "Open every day, 6:30 AM - 11:00 PM"],
+    ],
+  },
+  es: {
+    title: "Ven a Fulton Street.",
+    subtitle: "Abierto todos los dias para abarrotes, desayuno, bebidas frescas y productos latinos.",
+    call: "Llamar ahora",
+    directions: "Como llegar",
+    cards: [
+      ["Direccion", "3289 Fulton St, Brooklyn, NY 11208"],
+      ["Telefono", "(718) 873-5127"],
+      ["Horario", "Abierto todos los dias, 6:30 AM - 11:00 PM"],
+    ],
+  },
+}
+
+const socials = [
+  ["Instagram", "https://www.instagram.com/ercimarketcorp"],
+  ["TikTok", "https://www.tiktok.com/@ercimarketcorp"],
+  ["Facebook", "https://www.facebook.com/ercimarketcorp"],
+]
+
 export default function ContactPage() {
   const { lang } = useLang()
-
-  const text = {
-    en: {
-      title: "Contact Us",
-      address: "Address",
-      phone: "Phone",
-      hours: "Hours",
-      hoursval: "Open every day, 6:30 AM – 11:00 PM",
-      social: "Follow Us",
-      directions: "Get Directions",
-    },
-    es: {
-      title: "Contáctanos",
-      address: "Dirección",
-      phone: "Teléfono",
-      hours: "Horario",
-      hoursval: "Abierto todos los días, 6:30 AM – 11:00 PM",
-      social: "Síguenos",
-      directions: "Cómo Llegar",
-    },
-  }
-
-  const t = text[lang]
+  const t = content[lang]
 
   return (
-    <div className="space-y-10">
-
-      {/* Header */}
-      <h1 className="text-4xl font-bold">{t.title}</h1>
-
-      {/* Contact Info */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="bg-neutral-900 text-white rounded-2xl p-6 space-y-2">
-          <p className="text-orange-500 font-bold">{t.address}</p>
-          <p className="text-neutral-300">3289 Fulton St</p>
-          <p className="text-neutral-300">Brooklyn, NY 11208</p>
+    <div className="space-y-12 py-12">
+      <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div>
+          <h1 className="text-5xl font-black leading-tight text-emerald-950 sm:text-6xl">{t.title}</h1>
+          <p className="mt-5 max-w-xl text-lg leading-8 text-zinc-600">{t.subtitle}</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="tel:+17188735127" className="inline-flex h-12 items-center justify-center rounded-lg bg-red-600 px-6 text-sm font-black text-white transition hover:bg-red-700">
+              {t.call}
+            </Link>
+            <Link href="https://maps.google.com/?q=3289+Fulton+St+Brooklyn+NY+11208" target="_blank" rel="noreferrer" className="inline-flex h-12 items-center justify-center rounded-lg bg-yellow-300 px-6 text-sm font-black text-emerald-950 transition hover:bg-yellow-200">
+              {t.directions}
+            </Link>
+          </div>
         </div>
-        <div className="bg-neutral-900 text-white rounded-2xl p-6 space-y-2">
-          <p className="text-orange-500 font-bold">{t.phone}</p>
-          <p className="text-neutral-300">(718) 873-5127</p>
+
+        <div className="grid gap-4 sm:grid-cols-3">
+          {t.cards.map(([label, value]) => (
+            <div key={label} className="rounded-lg border border-emerald-900/10 bg-white p-5 shadow-sm">
+              <p className="text-xs font-black uppercase tracking-[0.14em] text-red-600">{label}</p>
+              <p className="mt-3 text-sm font-bold leading-6 text-emerald-950">{value}</p>
+            </div>
+          ))}
         </div>
-        <div className="bg-neutral-900 text-white rounded-2xl p-6 space-y-2">
-          <p className="text-orange-500 font-bold">{t.hours}</p>
-          <p className="text-neutral-300">{t.hoursval}</p>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[1fr_0.34fr]">
+        <div className="overflow-hidden rounded-lg border border-emerald-900/10">
+          <iframe
+            title="Map to ERCI Market Corp"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"
+            width="100%"
+            height="460"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
-      </div>
-
-      {/* Google Maps Embed */}
-      <div className="rounded-2xl overflow-hidden border border-neutral-200">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"
-          width="100%"
-          height="350"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
-
-      {/* Directions + Social */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <Link
-          href="https://maps.google.com/?q=3289+Fulton+St+Brooklyn+NY+11208"
-          target="_blank"
-          rel="noreferrer"
-          className="px-6 py-3 bg-orange-500 text-black font-bold rounded-md hover:bg-orange-400 transition-colors text-center"
-        >
-          {t.directions}
-        </Link>
-
-        <div className="flex gap-4 text-sm">
-          <Link href="https://www.instagram.com/ercimarketcorp" target="_blank" rel="noreferrer" className="text-orange-500 hover:underline">Instagram</Link>
-          <Link href="https://www.tiktok.com/@ercimarketcorp" target="_blank" rel="noreferrer" className="text-orange-500 hover:underline">TikTok</Link>
-          <Link href="https://www.facebook.com/ercimarketcorp" target="_blank" rel="noreferrer" className="text-orange-500 hover:underline">Facebook</Link>
-        </div>
-      </div>
-
+        <aside className="rounded-lg bg-emerald-950 p-7 text-white">
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-yellow-300">Social</p>
+          <div className="mt-6 flex flex-col gap-3">
+            {socials.map(([label, href]) => (
+              <Link key={label} href={href} target="_blank" rel="noreferrer" className="rounded-lg border border-white/12 px-4 py-3 text-sm font-black transition hover:bg-white/10">
+                {label}
+              </Link>
+            ))}
+          </div>
+        </aside>
+      </section>
     </div>
   )
 }

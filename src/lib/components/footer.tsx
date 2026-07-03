@@ -1,48 +1,53 @@
 import Link from "next/link"
 
+const links = [
+  ["Instagram", "https://www.instagram.com/ercimarketcorp"],
+  ["TikTok", "https://www.tiktok.com/@ercimarketcorp"],
+  ["Facebook", "https://www.facebook.com/ercimarketcorp"],
+]
+
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white mt-16">
-      <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
-
-        {/* Brand */}
-        <div className="space-y-2">
-          <p className="text-orange-500 font-bold text-lg">ERCI MARKET <span className="text-white">CORP</span></p>
-          <p className="text-neutral-400 text-sm">Your neighborhood market in Brooklyn.</p>
-          <p className="text-neutral-400 text-sm">Tu mercado del vecindario en Brooklyn.</p>
+    <footer className="mt-16 bg-emerald-950 text-white">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-12 sm:px-6 md:grid-cols-[1.2fr_0.9fr_0.9fr] lg:px-8">
+        <div>
+          <p className="text-3xl font-black tracking-tight">ERCI Market Corp</p>
+          <p className="mt-4 max-w-md text-sm leading-6 text-emerald-50/70">
+            Your Brooklyn stop for Peruvian and Ecuadorian products, fresh juices, breakfast sandwiches, groceries, and neighborhood essentials.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="tel:+17188735127" className="rounded-lg bg-yellow-300 px-4 py-3 text-sm font-black text-emerald-950 transition hover:bg-yellow-200">
+              (718) 873-5127
+            </Link>
+            <Link href="https://maps.google.com/?q=3289+Fulton+St+Brooklyn+NY+11208" target="_blank" rel="noreferrer" className="rounded-lg border border-white/18 px-4 py-3 text-sm font-black text-white transition hover:bg-white/10">
+              Get directions
+            </Link>
+          </div>
         </div>
 
-        {/* Info */}
-        <div className="space-y-2 text-sm text-neutral-400">
-          <p className="text-white font-semibold">Visit Us / Visítanos</p>
-          <p>3289 Fulton St, Brooklyn, NY 11208</p>
-          <p>(718) 873-5127</p>
-          <p>Open every day / Abierto todos los días</p>
-          <p>6:30 AM – 11:00 PM</p>
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-yellow-300">Visit</p>
+          <div className="mt-4 space-y-2 text-sm leading-6 text-emerald-50/74">
+            <p>3289 Fulton St</p>
+            <p>Brooklyn, NY 11208</p>
+            <p>Open every day</p>
+            <p>6:30 AM - 11:00 PM</p>
+          </div>
         </div>
 
-        {/* Social */}
-        <div className="space-y-2 text-sm text-neutral-400">
-          <p className="text-white font-semibold">Follow Us / Síguenos</p>
-          <Link href="https://www.instagram.com/ercimarketcorp" target="_blank" rel="noreferrer" className="block hover:text-orange-500 transition-colors">
-            Instagram: @ercimarketcorp
-          </Link>
-          <Link href="https://www.tiktok.com/@ercimarketcorp" target="_blank" rel="noreferrer" className="block hover:text-orange-500 transition-colors">
-            TikTok: @ercimarketcorp
-          </Link>
-          <Link href="https://www.facebook.com/ercimarketcorp" target="_blank" rel="noreferrer" className="block hover:text-orange-500 transition-colors">
-            Facebook: @ercimarketcorp
-          </Link>
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-yellow-300">Follow</p>
+          <div className="mt-4 flex flex-col gap-2 text-sm font-bold text-emerald-50/74">
+            {links.map(([label, href]) => (
+              <Link key={label} href={href} target="_blank" rel="noreferrer" className="transition hover:text-yellow-300">
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
-
       </div>
-
-      {/* Bottom bar */}
-      <div className="border-t border-neutral-700 px-6 py-4 text-center text-xs text-neutral-500">
-        <span>© {new Date().getFullYear()} Erci Market Corp · </span>
-        <Link href="https://nyc.voltanpo.org" target="_blank" rel="noreferrer" className="hover:text-orange-500 transition-colors">
-          Website made by @VoltaNYC
-        </Link>
+      <div className="border-t border-white/10 px-5 py-5 text-center text-xs font-semibold text-emerald-50/48">
+        © {new Date().getFullYear()} Erci Market Corp · Website made by @VoltaNYC
       </div>
     </footer>
   )
