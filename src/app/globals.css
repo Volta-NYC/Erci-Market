@@ -29,8 +29,8 @@ body {
 }
 
 ::selection {
-  background: #fde047;
-  color: #022c22;
+  background: #f97316;
+  color: #111827;
 }
 
 h1,
@@ -153,7 +153,7 @@ h3,
 }
 
 .colorful-border::before {
-  background: linear-gradient(90deg, #dc2626, #facc15, #059669);
+  background: linear-gradient(90deg, #f97316, #dc2626, #facc15, #059669);
   border-radius: inherit;
   content: "";
   height: 4px;

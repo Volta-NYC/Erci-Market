@@ -76,8 +76,8 @@ const images = {
 const productStyles = [
   "bg-yellow-50 border-yellow-300/70",
   "bg-emerald-50 border-emerald-300/70",
-  "bg-red-50 border-red-300/70",
   "bg-orange-50 border-orange-300/70",
+  "bg-neutral-50 border-neutral-300/70",
 ]
 
 function ArrowIcon() {
@@ -108,8 +108,8 @@ export default function HomePage() {
         <div className="absolute right-0 top-24 -z-10 h-44 w-80 rotate-6 rounded-[36px] bg-red-500/10 blur-2xl" />
         <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="animate-fade-up max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-900/10 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-red-600 shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-emerald-600" />
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-orange-500/30 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-orange-600 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-orange-500" />
               ERCI Market Corp
             </div>
             <h1 className="font-display max-w-[11ch] text-5xl font-extrabold leading-[0.9] tracking-tight text-emerald-950 sm:text-7xl lg:text-7xl xl:text-8xl">
@@ -117,7 +117,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-zinc-600 sm:text-xl">{t.text}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/pages/menu" className="shine-sweep relative inline-flex h-14 overflow-hidden rounded-lg bg-red-600 px-7 text-sm font-black text-white shadow-[0_22px_44px_rgba(220,38,38,0.24)] transition hover:-translate-y-1 hover:bg-red-700">
+              <Link href="/pages/menu" className="shine-sweep relative inline-flex h-14 overflow-hidden rounded-lg bg-orange-500 px-7 text-sm font-black text-neutral-950 shadow-[0_22px_44px_rgba(249,115,22,0.26)] transition hover:-translate-y-1 hover:bg-orange-400">
                 <span className="relative z-10 inline-flex items-center justify-center gap-2">
                   {t.menu}
                   <ArrowIcon />
@@ -130,7 +130,7 @@ export default function HomePage() {
           </div>
 
           <div className="animate-fade-up animate-delay-1 relative min-h-[560px]">
-            <div className="absolute right-10 top-6 z-10 rotate-3 rounded-2xl bg-red-600 px-5 py-4 text-sm font-black uppercase tracking-[0.16em] text-white shadow-2xl">
+            <div className="absolute right-10 top-6 z-10 rotate-3 rounded-2xl bg-orange-500 px-5 py-4 text-sm font-black uppercase tracking-[0.16em] text-neutral-950 shadow-2xl">
               Fulton St
             </div>
             <div className="absolute right-0 top-0 h-[72%] w-[88%] overflow-hidden rounded-[28px] bg-emerald-950 shadow-[0_30px_80px_rgba(4,47,46,0.28)]">
@@ -160,7 +160,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="scroll-reveal -mx-5 border-y border-emerald-900/10 bg-gradient-to-r from-red-600 via-emerald-950 to-yellow-500 py-4 text-white sm:-mx-6 lg:-mx-8">
+      <section className="scroll-reveal -mx-5 border-y border-neutral-900/10 bg-gradient-to-r from-orange-500 via-neutral-900 to-emerald-700 py-4 text-white sm:-mx-6 lg:-mx-8">
         <div className="ticker-track flex w-max gap-8 whitespace-nowrap">
           {tickerItems.map((item, index) => (
             <span key={`${item}-${index}`} className="inline-flex items-center gap-8 text-sm font-black uppercase tracking-[0.2em]">

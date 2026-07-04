@@ -23,12 +23,12 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-emerald-900/10 bg-white/90 shadow-[0_8px_30px_rgba(4,47,46,0.06)] backdrop-blur-xl">
       <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-5 px-5 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-3" aria-label="ERCI Market Corp home">
-          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-950 text-lg font-black text-white shadow-[0_14px_28px_rgba(4,47,46,0.18)] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-red-600">
+          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-900 text-lg font-black text-orange-500 shadow-[0_14px_28px_rgba(17,24,39,0.18)] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-orange-500 group-hover:text-neutral-950">
             E
           </span>
           <span className="leading-none">
             <span className="font-display block text-lg font-extrabold tracking-tight text-emerald-950">ERCI Market</span>
-            <span className="mt-1 block text-[10px] font-black uppercase tracking-[0.24em] text-red-600">Brooklyn, NY</span>
+            <span className="mt-1 block text-[10px] font-black uppercase tracking-[0.24em] text-orange-500">Brooklyn, NY</span>
           </span>
         </Link>
 
@@ -42,12 +42,12 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <button
             onClick={toggleLang}
-            className="h-11 rounded-lg border border-emerald-900/15 bg-white px-3 text-xs font-black text-emerald-950 shadow-sm transition hover:-translate-y-0.5 hover:border-red-600 hover:text-red-600"
+            className="h-11 rounded-lg border border-neutral-900/15 bg-white px-3 text-xs font-black text-neutral-900 shadow-sm transition hover:-translate-y-0.5 hover:border-orange-500 hover:text-orange-600"
             type="button"
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
-          <Link href="tel:+17188735127" className="shine-sweep relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-lg bg-red-600 px-4 text-sm font-black text-white shadow-[0_16px_32px_rgba(220,38,38,0.22)] transition hover:-translate-y-0.5 hover:bg-red-700">
+          <Link href="tel:+17188735127" className="shine-sweep relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-lg bg-orange-500 px-4 text-sm font-black text-neutral-950 shadow-[0_16px_32px_rgba(249,115,22,0.26)] transition hover:-translate-y-0.5 hover:bg-orange-400">
             <PhoneIcon />
             <span className="hidden sm:inline">{text[lang].call}</span>
           </Link>
