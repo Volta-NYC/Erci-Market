@@ -31,14 +31,14 @@ export default function MenuPage() {
 
   return (
     <div className="space-y-12 py-12">
-      <section className="max-w-4xl">
+      <section className="scroll-reveal-left max-w-4xl">
         <h1 className="text-5xl font-black leading-tight text-emerald-950 sm:text-6xl">{t.title}</h1>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">{t.subtitle}</p>
       </section>
 
-      <section className="grid gap-5 md:grid-cols-2">
+      <section className="reveal-stagger grid gap-5 md:grid-cols-2">
         {t.categories.map(([title, note, items], index) => (
-          <article key={title as string} className={`${index === 0 ? "bg-emerald-950 text-white" : "bg-white text-emerald-950"} rounded-lg border border-emerald-900/10 p-7 shadow-sm`}>
+          <article key={title as string} className={`${index === 0 ? "bg-emerald-950 text-white" : "bg-white text-emerald-950"} rounded-lg border border-emerald-900/10 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(4,47,46,0.12)]`}>
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-3xl font-black">{title}</h2>
@@ -49,8 +49,8 @@ export default function MenuPage() {
               </span>
             </div>
             <ul className="mt-8 space-y-3">
-              {(items as string[]).map((item) => (
-                <li key={item} className={`flex items-center justify-between gap-4 border-t pt-3 text-sm font-bold ${index === 0 ? "border-white/14" : "border-emerald-900/10"}`}>
+              {(items as string[]).map((item, itemIndex) => (
+                <li key={item} className={`scroll-reveal flex items-center justify-between gap-4 border-t pt-3 text-sm font-bold ${index === 0 ? "border-white/14" : "border-emerald-900/10"}`} style={{ animationDelay: `${itemIndex * 50}ms` }}>
                   <span>{item}</span>
                   <span className="h-2 w-2 shrink-0 rounded-full bg-yellow-300" />
                 </li>

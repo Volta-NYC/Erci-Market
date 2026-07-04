@@ -33,22 +33,22 @@ export default function AboutPage() {
   return (
     <div className="space-y-16 py-12">
       <section className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end">
-        <div>
+        <div className="scroll-reveal-left">
           <h1 className="max-w-4xl text-5xl font-black leading-tight text-emerald-950 sm:text-6xl">{t.title}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">{t.body}</p>
           <Link href="/pages/contact" className="mt-8 inline-flex h-12 items-center rounded-lg bg-red-600 px-6 text-sm font-black text-white transition hover:bg-red-700">
             {t.cta}
           </Link>
         </div>
-        <div className="rounded-lg bg-yellow-300 p-8 text-emerald-950">
+        <div className="scroll-reveal-right rounded-lg bg-yellow-300 p-8 text-emerald-950">
           <p className="text-sm font-black uppercase tracking-[0.16em] text-red-700">ERCI Market Corp</p>
           <p className="mt-5 text-3xl font-black leading-tight">3289 Fulton St, Brooklyn, NY 11208</p>
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="reveal-stagger grid gap-4 md:grid-cols-3">
         {t.panels.map(([title, body]) => (
-          <article key={title} className="rounded-lg border border-emerald-900/10 bg-white p-7 shadow-sm">
+          <article key={title} className="rounded-lg border border-emerald-900/10 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(4,47,46,0.12)]">
             <h2 className="text-2xl font-black text-emerald-950">{title}</h2>
             <p className="mt-4 text-sm leading-6 text-zinc-600">{body}</p>
           </article>
