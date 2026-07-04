@@ -21,7 +21,7 @@ const copy = {
     categoriesTitle: "Everything for the quick stop, the family table, and the taste of home.",
     juiceTitle: "Fresh juices that look as good as they taste.",
     juiceText: "Ask what fruit is best today, grab a smoothie with breakfast, or cool down with a citrus-green blend after work.",
-    deliveryTitle: "Useful neighborhood service, not website fluff.",
+    deliveryTitle: "Neighborhood service that makes the daily run easier.",
     deliveryText: "Call the store for delivery on orders over $75, ask about free in-store coffee, or stop in any day from 6:30 AM to 11:00 PM.",
     visitTitle: "Find us on Fulton Street.",
     visitText: "Walk in for groceries, breakfast, drinks, and Latin pantry favorites.",
@@ -51,7 +51,7 @@ const copy = {
     categoriesTitle: "Todo para la parada rapida, la mesa familiar y el sabor de casa.",
     juiceTitle: "Jugos frescos que se ven tan bien como saben.",
     juiceText: "Pregunta que fruta esta mejor hoy, pide un batido con desayuno o refrescate con una mezcla verde citrica.",
-    deliveryTitle: "Servicio util del vecindario, sin relleno.",
+    deliveryTitle: "Servicio del vecindario que hace mas facil la compra diaria.",
     deliveryText: "Llama para delivery en ordenes mayores de $75, pregunta por cafe gratis en tienda o visita cualquier dia de 6:30 AM a 11:00 PM.",
     visitTitle: "Encuentranos en Fulton Street.",
     visitText: "Visitanos para abarrotes, desayuno, bebidas y favoritos de despensa latina.",
@@ -72,6 +72,13 @@ const images = {
   sandwich: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1000&q=82",
   pantry: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1100&q=82",
 }
+
+const productStyles = [
+  "bg-yellow-50 border-yellow-300/70",
+  "bg-emerald-50 border-emerald-300/70",
+  "bg-red-50 border-red-300/70",
+  "bg-orange-50 border-orange-300/70",
+]
 
 function ArrowIcon() {
   return (
@@ -97,14 +104,15 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden pb-10">
       <section className="relative min-h-[calc(100svh-120px)] py-10 sm:py-14 lg:py-16">
-        <div className="absolute left-1/2 top-6 -z-10 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-yellow-200/40 blur-3xl" />
+        <div className="absolute -left-8 top-10 -z-10 h-40 w-72 rotate-[-8deg] rounded-[36px] bg-yellow-300/35 blur-2xl" />
+        <div className="absolute right-0 top-24 -z-10 h-44 w-80 rotate-6 rounded-[36px] bg-red-500/10 blur-2xl" />
         <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="animate-fade-up max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-900/10 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-red-600 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-600" />
               ERCI Market Corp
             </div>
-            <h1 className="font-display max-w-[11ch] text-5xl font-extrabold leading-[0.88] tracking-tight text-emerald-950 sm:text-7xl lg:text-8xl">
+            <h1 className="font-display max-w-[11ch] text-5xl font-extrabold leading-[0.9] tracking-tight text-emerald-950 sm:text-7xl lg:text-7xl xl:text-8xl">
               {t.title}
             </h1>
             <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-zinc-600 sm:text-xl">{t.text}</p>
@@ -122,6 +130,9 @@ export default function HomePage() {
           </div>
 
           <div className="animate-fade-up animate-delay-1 relative min-h-[560px]">
+            <div className="absolute right-10 top-6 z-10 rotate-3 rounded-2xl bg-red-600 px-5 py-4 text-sm font-black uppercase tracking-[0.16em] text-white shadow-2xl">
+              Fulton St
+            </div>
             <div className="absolute right-0 top-0 h-[72%] w-[88%] overflow-hidden rounded-[28px] bg-emerald-950 shadow-[0_30px_80px_rgba(4,47,46,0.28)]">
               <img src={images.produce} alt="Fresh produce shelves at a neighborhood market" className="h-full w-full object-cover opacity-95 transition duration-700 hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/72 via-transparent to-transparent" />
@@ -149,7 +160,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="-mx-5 border-y border-emerald-900/10 bg-emerald-950 py-4 text-white sm:-mx-6 lg:-mx-8">
+      <section className="scroll-reveal -mx-5 border-y border-emerald-900/10 bg-gradient-to-r from-red-600 via-emerald-950 to-yellow-500 py-4 text-white sm:-mx-6 lg:-mx-8">
         <div className="ticker-track flex w-max gap-8 whitespace-nowrap">
           {tickerItems.map((item, index) => (
             <span key={`${item}-${index}`} className="inline-flex items-center gap-8 text-sm font-black uppercase tracking-[0.2em]">
@@ -160,14 +171,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="scroll-reveal py-20">
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
-          <h2 className="animate-fade-up font-display text-4xl font-extrabold leading-[0.98] tracking-tight text-emerald-950 sm:text-6xl">{t.categoriesTitle}</h2>
+          <h2 className="scroll-reveal-left font-display text-4xl font-extrabold leading-[0.98] tracking-tight text-emerald-950 sm:text-6xl">{t.categoriesTitle}</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {t.products.map(([title, description], index) => (
-              <article key={title} className="group animate-fade-up rounded-2xl border border-emerald-900/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(4,47,46,0.12)]" style={{ animationDelay: `${index * 90}ms` }}>
+              <article key={title} className={`colorful-border group scroll-reveal rounded-2xl border p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(4,47,46,0.12)] ${productStyles[index]}`} style={{ animationDelay: `${index * 90}ms` }}>
                 <div className="mb-8 flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-300 text-emerald-950 transition group-hover:rotate-12 group-hover:bg-red-600 group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-emerald-950 shadow-sm transition group-hover:rotate-12 group-hover:bg-red-600 group-hover:text-white">
                     <MarkIcon />
                   </div>
                   <span className="font-display text-4xl font-extrabold text-emerald-950/10">0{index + 1}</span>
@@ -180,17 +191,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="grid overflow-hidden rounded-[28px] bg-emerald-950 text-white shadow-[0_30px_90px_rgba(4,47,46,0.18)] lg:grid-cols-[0.95fr_1.05fr]">
+      <section className="scroll-reveal grid overflow-hidden rounded-[28px] bg-emerald-950 text-white shadow-[0_30px_90px_rgba(4,47,46,0.18)] lg:grid-cols-[0.95fr_1.05fr]">
         <div className="relative min-h-[420px]">
           <img src={images.juice} alt="Fresh juices and fruit" className="h-full min-h-[420px] w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/50 to-transparent" />
         </div>
         <div className="p-7 sm:p-10 lg:p-14">
-          <h2 className="font-display max-w-xl text-4xl font-extrabold leading-tight sm:text-6xl">{t.juiceTitle}</h2>
+          <h2 className="scroll-reveal-left font-display max-w-xl text-4xl font-extrabold leading-tight sm:text-6xl">{t.juiceTitle}</h2>
           <p className="mt-6 max-w-lg text-base font-medium leading-7 text-emerald-50/78">{t.juiceText}</p>
           <div className="mt-9 grid gap-3 sm:grid-cols-2">
-            {t.juices.map((juice) => (
-              <div key={juice} className="group flex items-center justify-between rounded-xl border border-white/14 bg-white/8 px-4 py-4 transition hover:-translate-y-0.5 hover:bg-white/14">
+            {t.juices.map((juice, index) => (
+              <div key={juice} className="group scroll-reveal flex items-center justify-between rounded-xl border border-white/14 bg-white/8 px-4 py-4 transition hover:-translate-y-0.5 hover:bg-white/14" style={{ animationDelay: `${index * 80}ms` }}>
                 <span className="text-sm font-black">{juice}</span>
                 <span className="h-3 w-3 rounded-full bg-yellow-300 transition group-hover:scale-150" />
               </div>
@@ -200,14 +211,14 @@ export default function HomePage() {
       </section>
 
       <section className="grid gap-5 py-20 lg:grid-cols-3">
-        <div className="rounded-[28px] bg-red-600 p-8 text-white shadow-[0_22px_70px_rgba(220,38,38,0.22)] lg:col-span-2">
+        <div className="scroll-reveal colorful-border rounded-[28px] bg-gradient-to-br from-red-600 via-red-600 to-orange-500 p-8 text-white shadow-[0_22px_70px_rgba(220,38,38,0.22)] lg:col-span-2">
           <h2 className="font-display max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">{t.deliveryTitle}</h2>
           <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-red-50/86">{t.deliveryText}</p>
           <Link href="tel:+17188735127" className="mt-8 inline-flex h-14 items-center justify-center rounded-lg bg-white px-6 py-4 text-sm font-black text-red-700 transition hover:-translate-y-1 hover:bg-yellow-200">
             {t.call}
           </Link>
         </div>
-        <div className="overflow-hidden rounded-[28px] bg-yellow-300 shadow-[0_22px_70px_rgba(234,179,8,0.18)]">
+        <div className="scroll-reveal overflow-hidden rounded-[28px] bg-yellow-300 shadow-[0_22px_70px_rgba(234,179,8,0.18)]">
           <img src={images.sandwich} alt="Breakfast sandwich" className="h-52 w-full object-cover" />
           <div className="p-7">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-red-700">{t.breakfast}</p>
@@ -216,8 +227,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-        <div>
+      <section className="scroll-reveal grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+        <div className="scroll-reveal-left">
           <h2 className="font-display text-4xl font-extrabold leading-tight text-emerald-950 sm:text-6xl">{t.visitTitle}</h2>
           <p className="mt-5 max-w-xl text-base font-medium leading-7 text-zinc-600">{t.visitText}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -229,7 +240,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="overflow-hidden rounded-[28px] border border-emerald-900/10 shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
+        <div className="scroll-reveal overflow-hidden rounded-[28px] border border-emerald-900/10 shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
           <iframe
             title="Map to ERCI Market Corp"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"

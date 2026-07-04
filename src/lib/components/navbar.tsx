@@ -47,7 +47,7 @@ export default function Navbar() {
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
-          <Link href="tel:+17188735127" className="shine-sweep relative inline-flex h-11 overflow-hidden rounded-lg bg-red-600 px-4 text-sm font-black text-white shadow-[0_16px_32px_rgba(220,38,38,0.22)] transition hover:-translate-y-0.5 hover:bg-red-700">
+          <Link href="tel:+17188735127" className="shine-sweep relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-lg bg-red-600 px-4 text-sm font-black text-white shadow-[0_16px_32px_rgba(220,38,38,0.22)] transition hover:-translate-y-0.5 hover:bg-red-700">
             <PhoneIcon />
             <span className="hidden sm:inline">{text[lang].call}</span>
           </Link>
