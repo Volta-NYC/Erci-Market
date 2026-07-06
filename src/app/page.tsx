@@ -68,9 +68,8 @@ const copy = {
 
 const images = {
   produce: "/erci-logo.jpg",
-  juice: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=1200&q=82",
-  sandwich: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1000&q=82",
-  pantry: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1100&q=82",
+  juice: "/juice.jpg",
+  sandwich: "/sandwich.jpg",
 }
 
 const productStyles = [
