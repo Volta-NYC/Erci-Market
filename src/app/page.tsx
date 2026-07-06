@@ -200,12 +200,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="scroll-reveal grid overflow-hidden rounded-[28px] bg-emerald-950 text-white shadow-[0_30px_90px_rgba(4,47,46,0.18)] lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="scroll-image-wipe relative min-h-[420px]">
-          <img src={images.juice} alt="Fresh juices and fruit" className="h-full min-h-[420px] w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/50 to-transparent" />
+      <section className="scroll-reveal relative left-1/2 grid w-screen -translate-x-1/2 overflow-hidden bg-emerald-950 text-white shadow-[0_30px_90px_rgba(4,47,46,0.18)] lg:grid-cols-[0.95fr_1.05fr]">
+        <div
+          className="relative min-h-[420px] bg-cover bg-center bg-no-repeat lg:min-h-[620px]"
+          style={{ backgroundImage: `url(${images.juice})` }}
+        >
+          <img src={images.juice} alt="Fresh juices and fruit" className="absolute inset-0 block h-full w-full object-cover opacity-100" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/22 via-transparent to-emerald-950/18" />
         </div>
-        <div className="p-7 sm:p-10 lg:p-14">
+        <div className="px-5 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-24 xl:px-24">
           <h2 className="scroll-reveal-left font-display max-w-xl text-4xl font-extrabold leading-tight sm:text-6xl">{t.juiceTitle}</h2>
           <p className="mt-6 max-w-lg text-base font-medium leading-7 text-emerald-50/78">{t.juiceText}</p>
           <div className="reveal-stagger mt-9 grid gap-3 sm:grid-cols-2">
