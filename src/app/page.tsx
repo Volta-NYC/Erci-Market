@@ -79,6 +79,8 @@ const productStyles = [
   "bg-neutral-50 border-neutral-300/70",
 ]
 
+const productMedia = [null, images.juice, null, null]
+
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none">
@@ -176,17 +178,20 @@ export default function HomePage() {
           <div className="reveal-stagger grid gap-4 sm:grid-cols-2">
             {t.products.map(([title, description], index) => (
               <article key={title} className={`colorful-border group rounded-2xl border p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(4,47,46,0.12)] ${productStyles[index]}`}>
+                {productMedia[index] ? (
+                  <div
+                    className="mb-6 block h-44 overflow-hidden rounded-xl border border-emerald-900/10 bg-cover bg-center bg-no-repeat shadow-sm"
+                    style={{ backgroundImage: `url(${productMedia[index]})` }}
+                  >
+                    <img src={productMedia[index]} alt={`${title} at ERCI Market`} className="block h-full w-full object-cover opacity-100 transition duration-700 group-hover:scale-105" loading="eager" />
+                  </div>
+                ) : null}
                 <div className="mb-8 flex items-center justify-between">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-emerald-950 shadow-sm transition group-hover:rotate-12 group-hover:bg-red-600 group-hover:text-white">
                     <MarkIcon />
                   </div>
                   <span className="font-display text-4xl font-extrabold text-emerald-950/10">0{index + 1}</span>
                 </div>
-                {index === 1 ? (
-                  <div className="mb-6 h-40 overflow-hidden rounded-xl border border-emerald-900/10 bg-emerald-950 shadow-sm">
-                    <img src={images.juice} alt="Fresh juices at ERCI Market" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                  </div>
-                ) : null}
                 <h3 className="font-display text-2xl font-extrabold text-emerald-950">{title}</h3>
                 <p className="mt-3 text-sm font-medium leading-6 text-zinc-600">{description}</p>
               </article>

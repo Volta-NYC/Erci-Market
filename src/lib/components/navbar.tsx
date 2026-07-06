@@ -12,7 +12,7 @@ function PhoneIcon() {
 }
 
 export default function Navbar() {
-  const { lang, toggleLang } = useLang()
+  const { lang } = useLang()
 
   const text = {
     en: { home: "Home", about: "About", contact: "Contact", menu: "Menu", call: "Call" },
@@ -40,13 +40,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={toggleLang}
-            className="h-11 rounded-lg border border-neutral-900/15 bg-white px-3 text-xs font-black text-neutral-900 shadow-sm transition hover:-translate-y-0.5 hover:border-orange-500 hover:text-orange-600"
-            type="button"
-          >
-            {lang === "en" ? "ES" : "EN"}
-          </button>
           <Link href="tel:+17188735127" className="shine-sweep relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-lg bg-orange-500 px-4 text-sm font-black text-neutral-950 shadow-[0_16px_32px_rgba(249,115,22,0.26)] transition hover:-translate-y-0.5 hover:bg-orange-400">
             <PhoneIcon />
             <span className="hidden sm:inline">{text[lang].call}</span>
