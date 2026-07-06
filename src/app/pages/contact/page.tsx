@@ -91,23 +91,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="scroll-reveal">
-        <div className="scroll-image-wipe overflow-hidden rounded-lg border border-emerald-900/10">
-          <iframe
-            title="Map to ERCI Market Corp"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"
-            width="100%"
-            height="460"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-      </section>
-
-      <section className="grid gap-6 lg:grid-cols-[1fr_0.42fr]">
-        <div className="scroll-reveal grid gap-8 rounded-[28px] border border-emerald-900/10 bg-white p-6 shadow-[0_22px_70px_rgba(4,47,46,0.08)] lg:grid-cols-[0.46fr_1fr] lg:p-8">
+      <section className="scroll-reveal grid gap-6 lg:grid-cols-[1fr_0.42fr]">
+        <div className="grid gap-8 rounded-[28px] border border-emerald-900/10 bg-white p-6 shadow-[0_22px_70px_rgba(4,47,46,0.08)] lg:grid-cols-[0.46fr_1fr] lg:p-8">
           <div className="scroll-reveal-left">
             <h2 className="font-display text-4xl font-extrabold leading-tight text-emerald-950">{t.formTitle}</h2>
             <p className="mt-4 text-sm font-medium leading-6 text-zinc-600">{t.formSubtitle}</p>
@@ -139,17 +124,32 @@ export default function ContactPage() {
           </form>
         </div>
 
-        <aside className="scroll-reveal-right rounded-[28px] bg-emerald-950 p-7 text-white shadow-[0_22px_70px_rgba(4,47,46,0.18)]">
+        <aside className="rounded-[28px] bg-emerald-950 p-7 text-white shadow-[0_22px_70px_rgba(4,47,46,0.18)]">
           <p className="text-sm font-black uppercase tracking-[0.16em] text-yellow-300">{t.socialTitle}</p>
           <p className="mt-5 text-2xl font-black leading-tight">{t.socialCopy}</p>
           <div className="mt-7 flex flex-col gap-3">
             {socials.map(([label, href], index) => (
-              <Link key={label} href={href} target="_blank" rel="noreferrer" className="scroll-reveal rounded-lg border border-white/12 px-4 py-3 text-sm font-black transition hover:-translate-y-0.5 hover:bg-white/10" style={{ animationDelay: `${index * 70}ms` }}>
+              <Link key={label} href={href} target="_blank" rel="noreferrer" className="rounded-lg border border-white/12 px-4 py-3 text-sm font-black transition hover:-translate-y-0.5 hover:bg-white/10" style={{ animationDelay: `${index * 70}ms` }}>
                 {label}
               </Link>
             ))}
           </div>
         </aside>
+      </section>
+
+      <section className="scroll-reveal relative left-1/2 w-screen -translate-x-1/2 border-y border-emerald-900/10 bg-emerald-950/5 px-5 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[28px] border border-emerald-900/10 bg-white shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
+          <iframe
+            title="Map to ERCI Market Corp"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"
+            width="100%"
+            height="430"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </section>
     </div>
   )
