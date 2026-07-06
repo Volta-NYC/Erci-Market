@@ -67,7 +67,7 @@ const copy = {
 }
 
 const images = {
-  produce: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1700&q=82",
+  produce: "/erci-logo.jpg",
   juice: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=1200&q=82",
   sandwich: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1000&q=82",
   pantry: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1100&q=82",
@@ -133,8 +133,8 @@ export default function HomePage() {
             <div className="absolute right-10 top-6 z-10 rotate-3 rounded-2xl bg-orange-500 px-5 py-4 text-sm font-black uppercase tracking-[0.16em] text-neutral-950 shadow-2xl">
               Fulton St
             </div>
-            <div className="scroll-image-wipe absolute right-0 top-0 h-[72%] w-[88%] overflow-hidden rounded-[28px] bg-emerald-950 shadow-[0_30px_80px_rgba(4,47,46,0.28)]">
-              <img src={images.produce} alt="Fresh produce shelves at a neighborhood market" className="h-full w-full object-cover opacity-95 transition duration-700 hover:scale-105" />
+            <div className="absolute right-0 top-0 h-[72%] w-[88%] overflow-hidden rounded-[28px] bg-emerald-950 shadow-[0_30px_80px_rgba(4,47,46,0.28)]">
+              <img src={images.produce} alt="ERCI Market storefront image from the current website" className="h-full w-full object-cover opacity-95 transition duration-700 hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/72 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/94 p-5 text-emerald-950 shadow-2xl backdrop-blur">
                 <p className="font-display text-3xl font-extrabold leading-tight">Peru, Ecuador, Brooklyn.</p>

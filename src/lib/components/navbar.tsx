@@ -23,8 +23,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-emerald-900/10 bg-white/90 shadow-[0_8px_30px_rgba(4,47,46,0.06)] backdrop-blur-xl">
       <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-5 px-5 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-3" aria-label="ERCI Market Corp home">
-          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-900 text-lg font-black text-orange-500 shadow-[0_14px_28px_rgba(17,24,39,0.18)] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-orange-500 group-hover:text-neutral-950">
-            E
+          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg bg-neutral-900 shadow-[0_14px_28px_rgba(17,24,39,0.18)] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-orange-500">
+            <img src="/favicon.png" alt="" className="h-10 w-10 rounded-md object-cover" />
           </span>
           <span className="leading-none">
             <span className="font-display block text-lg font-extrabold tracking-tight text-emerald-950">ERCI Market</span>

@@ -173,63 +173,85 @@ h3,
 }
 
 .scroll-reveal {
-  animation: reveal-up both;
-  animation-range: entry 10% cover 32%;
-  animation-timeline: view();
+  opacity: 0;
+  transform: translateY(42px) scale(.98);
+  transition: opacity 760ms cubic-bezier(.2,.8,.2,1), transform 760ms cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
 }
 
 .scroll-reveal-left {
-  animation: reveal-left both;
-  animation-range: entry 8% cover 34%;
-  animation-timeline: view();
+  opacity: 0;
+  transform: translateX(-42px);
+  transition: opacity 780ms cubic-bezier(.2,.8,.2,1), transform 780ms cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
 }
 
 .scroll-reveal-right {
-  animation: reveal-right both;
-  animation-range: entry 8% cover 34%;
-  animation-timeline: view();
+  opacity: 0;
+  transform: translateX(42px);
+  transition: opacity 780ms cubic-bezier(.2,.8,.2,1), transform 780ms cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
 }
 
 .scroll-reveal-zoom {
-  animation: reveal-zoom both;
-  animation-range: entry 10% cover 34%;
-  animation-timeline: view();
+  opacity: 0;
+  transform: scale(.92);
+  transition: opacity 760ms cubic-bezier(.2,.8,.2,1), transform 760ms cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
 }
 
 .scroll-image-wipe {
-  animation: image-wipe both;
-  animation-range: entry 8% cover 38%;
-  animation-timeline: view();
+  clip-path: inset(0 100% 0 0 round 28px);
+  opacity: .4;
+  transform: scale(1.04);
+  transition: clip-path 900ms cubic-bezier(.2,.8,.2,1), opacity 900ms cubic-bezier(.2,.8,.2,1), transform 900ms cubic-bezier(.2,.8,.2,1);
+  will-change: clip-path, opacity, transform;
 }
 
 .reveal-stagger > * {
-  animation: reveal-up both;
-  animation-range: entry 12% cover 30%;
-  animation-timeline: view();
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 760ms cubic-bezier(.2,.8,.2,1), transform 760ms cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
 }
 
 .reveal-stagger > *:nth-child(2n) {
-  animation-name: reveal-right;
+  transform: translateX(42px);
 }
 
 .reveal-stagger > *:nth-child(2n + 1) {
-  animation-name: reveal-left;
+  transform: translateX(-42px);
 }
 
 .reveal-stagger > *:nth-child(1) {
-  animation-delay: 0ms;
+  transition-delay: 0ms;
 }
 
 .reveal-stagger > *:nth-child(2) {
-  animation-delay: 80ms;
+  transition-delay: 90ms;
 }
 
 .reveal-stagger > *:nth-child(3) {
-  animation-delay: 160ms;
+  transition-delay: 180ms;
 }
 
 .reveal-stagger > *:nth-child(4) {
-  animation-delay: 240ms;
+  transition-delay: 270ms;
+}
+
+.scroll-reveal.is-visible,
+.scroll-reveal-left.is-visible,
+.scroll-reveal-right.is-visible,
+.scroll-reveal-zoom.is-visible,
+.reveal-stagger > *.is-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.scroll-image-wipe.is-visible {
+  clip-path: inset(0 0 0 0 round 28px);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .colorful-border {
