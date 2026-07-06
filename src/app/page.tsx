@@ -182,6 +182,11 @@ export default function HomePage() {
                   </div>
                   <span className="font-display text-4xl font-extrabold text-emerald-950/10">0{index + 1}</span>
                 </div>
+                {index === 1 ? (
+                  <div className="scroll-image-wipe mb-6 h-40 overflow-hidden rounded-xl border border-emerald-900/10 bg-emerald-950 shadow-sm">
+                    <img src={images.juice} alt="Fresh juices at ERCI Market" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                  </div>
+                ) : null}
                 <h3 className="font-display text-2xl font-extrabold text-emerald-950">{title}</h3>
                 <p className="mt-3 text-sm font-medium leading-6 text-zinc-600">{description}</p>
               </article>
@@ -226,7 +231,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="scroll-reveal grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+      <section className="scroll-reveal grid gap-8 border-t border-emerald-900/10 pt-16 lg:grid-cols-[0.76fr_1.24fr] lg:items-center">
         <div className="scroll-reveal-left">
           <h2 className="font-display text-4xl font-extrabold leading-tight text-emerald-950 sm:text-6xl">{t.visitTitle}</h2>
           <p className="mt-5 max-w-xl text-base font-medium leading-7 text-zinc-600">{t.visitText}</p>
@@ -239,12 +244,12 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="scroll-image-wipe overflow-hidden rounded-[28px] border border-emerald-900/10 shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
+        <div className="scroll-image-wipe overflow-hidden rounded-[28px] border border-emerald-900/10 bg-white shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
           <iframe
             title="Map to ERCI Market Corp"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"
             width="100%"
-            height="390"
+            height="460"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"

@@ -18,6 +18,8 @@ const content = {
     message: "Message",
     submit: "Send message",
     success: "Thanks. Your message is ready for the ERCI Market team.",
+    socialTitle: "Social",
+    socialCopy: "Follow ERCI Market for fresh juice, breakfast, and market updates.",
     cards: [
       ["Address", "3289 Fulton St, Brooklyn, NY 11208"],
       ["Phone", "(718) 873-5127"],
@@ -37,6 +39,8 @@ const content = {
     message: "Mensaje",
     submit: "Enviar mensaje",
     success: "Gracias. Tu mensaje esta listo para el equipo de ERCI Market.",
+    socialTitle: "Social",
+    socialCopy: "Sigue a ERCI Market para ver jugos frescos, desayunos y novedades de la tienda.",
     cards: [
       ["Direccion", "3289 Fulton St, Brooklyn, NY 11208"],
       ["Telefono", "(718) 873-5127"],
@@ -87,7 +91,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[1fr_0.34fr]">
+      <section className="scroll-reveal">
         <div className="scroll-image-wipe overflow-hidden rounded-lg border border-emerald-900/10">
           <iframe
             title="Map to ERCI Market Corp"
@@ -100,9 +104,45 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
-        <aside className="scroll-reveal-right rounded-lg bg-emerald-950 p-7 text-white">
-          <p className="text-sm font-black uppercase tracking-[0.16em] text-yellow-300">Social</p>
-          <div className="mt-6 flex flex-col gap-3">
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[1fr_0.42fr]">
+        <div className="scroll-reveal grid gap-8 rounded-[28px] border border-emerald-900/10 bg-white p-6 shadow-[0_22px_70px_rgba(4,47,46,0.08)] lg:grid-cols-[0.46fr_1fr] lg:p-8">
+          <div className="scroll-reveal-left">
+            <h2 className="font-display text-4xl font-extrabold leading-tight text-emerald-950">{t.formTitle}</h2>
+            <p className="mt-4 text-sm font-medium leading-6 text-zinc-600">{t.formSubtitle}</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
+            <label className="block">
+              <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.name}</span>
+              <input required name="name" className="mt-2 h-12 w-full rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
+            </label>
+            <label className="block">
+              <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.email}</span>
+              <input required type="email" name="email" className="mt-2 h-12 w-full rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
+            </label>
+            <label className="block">
+              <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.phone}</span>
+              <input type="tel" name="phone" className="mt-2 h-12 w-full rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
+            </label>
+            <label className="block sm:row-span-2">
+              <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.message}</span>
+              <textarea required name="message" rows={5} className="mt-2 min-h-[128px] w-full resize-none rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 py-3 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
+            </label>
+            <div className="flex flex-col justify-end gap-3">
+              <button type="submit" className="shine-sweep relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-orange-500 px-6 text-sm font-black text-neutral-950 shadow-[0_16px_32px_rgba(249,115,22,0.22)] transition hover:-translate-y-0.5 hover:bg-orange-400">
+                {t.submit}
+              </button>
+              {submitted ? <p className="text-sm font-bold text-emerald-700">{t.success}</p> : null}
+            </div>
+          </form>
+        </div>
+
+        <aside className="scroll-reveal-right rounded-[28px] bg-emerald-950 p-7 text-white shadow-[0_22px_70px_rgba(4,47,46,0.18)]">
+          <p className="text-sm font-black uppercase tracking-[0.16em] text-yellow-300">{t.socialTitle}</p>
+          <p className="mt-5 text-2xl font-black leading-tight">{t.socialCopy}</p>
+          <div className="mt-7 flex flex-col gap-3">
             {socials.map(([label, href], index) => (
               <Link key={label} href={href} target="_blank" rel="noreferrer" className="scroll-reveal rounded-lg border border-white/12 px-4 py-3 text-sm font-black transition hover:-translate-y-0.5 hover:bg-white/10" style={{ animationDelay: `${index * 70}ms` }}>
                 {label}
@@ -110,38 +150,6 @@ export default function ContactPage() {
             ))}
           </div>
         </aside>
-      </section>
-
-      <section className="scroll-reveal grid gap-8 rounded-[28px] border border-emerald-900/10 bg-white p-6 shadow-[0_22px_70px_rgba(4,47,46,0.08)] lg:grid-cols-[0.72fr_1.28fr] lg:p-8">
-        <div className="scroll-reveal-left">
-          <h2 className="font-display text-4xl font-extrabold leading-tight text-emerald-950">{t.formTitle}</h2>
-          <p className="mt-4 text-sm font-medium leading-6 text-zinc-600">{t.formSubtitle}</p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
-          <label className="block">
-            <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.name}</span>
-            <input required name="name" className="mt-2 h-12 w-full rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
-          </label>
-          <label className="block">
-            <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.email}</span>
-            <input required type="email" name="email" className="mt-2 h-12 w-full rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
-          </label>
-          <label className="block">
-            <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.phone}</span>
-            <input type="tel" name="phone" className="mt-2 h-12 w-full rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
-          </label>
-          <label className="block sm:row-span-2">
-            <span className="text-xs font-black uppercase tracking-[0.14em] text-orange-600">{t.message}</span>
-            <textarea required name="message" rows={5} className="mt-2 min-h-[128px] w-full resize-none rounded-lg border border-emerald-900/15 bg-emerald-50/40 px-4 py-3 text-sm font-semibold text-emerald-950 outline-none transition focus:border-orange-500 focus:bg-white" />
-          </label>
-          <div className="flex flex-col justify-end gap-3">
-            <button type="submit" className="shine-sweep relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-orange-500 px-6 text-sm font-black text-neutral-950 shadow-[0_16px_32px_rgba(249,115,22,0.22)] transition hover:-translate-y-0.5 hover:bg-orange-400">
-              {t.submit}
-            </button>
-            {submitted ? <p className="text-sm font-bold text-emerald-700">{t.success}</p> : null}
-          </div>
-        </form>
       </section>
     </div>
   )

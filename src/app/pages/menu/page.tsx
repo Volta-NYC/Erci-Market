@@ -7,20 +7,20 @@ const menu = {
     title: "Menu and market favorites.",
     subtitle: "Breakfast sandwiches, fresh fruit drinks, Latin products, and daily grocery essentials. Availability may vary by day.",
     categories: [
-      ["Breakfast", "Served 7:00 AM - 2:00 PM", ["Bacon, Egg & Cheese Sandwich", "Ham & Cheese Sandwich", "Egg & Cheese Sandwich", "BLT Sandwich"]],
-      ["Fresh Juices", "Made fresh daily with real fruit", ["Potenciador Cerebral", "Verde Citrico", "Pepino Limon", "Zing de Jengibre"]],
-      ["Smoothies & Drinks", "Cold, fresh, and ready to go", ["Fresh Fruit Smoothies", "Batidos", "Coffee", "Beer & Beverages"]],
-      ["Latin Products", "Peruvian and Ecuadorian specialties", ["Peruvian Pantry Staples", "Ecuadorian Specialty Products", "Fresh Produce", "Snacks & Candy"]],
+      ["Breakfast", "Served 7:00 AM - 2:00 PM", [["Bacon, Egg & Cheese Sandwich", "$5.99"], ["Ham & Cheese Sandwich", "$5.49"], ["Egg & Cheese Sandwich", "$4.49"], ["BLT Sandwich", "$6.49"]]],
+      ["Fresh Juices", "Made fresh daily with real fruit", [["Potenciador Cerebral", "$6.99"], ["Verde Citrico", "$6.99"], ["Pepino Limon", "$6.99"], ["Zing de Jengibre", "$6.99"]]],
+      ["Smoothies & Drinks", "Cold, fresh, and ready to go", [["Fresh Fruit Smoothies", "$7.49"], ["Batidos", "$6.99"], ["Coffee", "$2.00"], ["Beer & Beverages", "From $2.50"]]],
+      ["Latin Products", "Peruvian and Ecuadorian specialties", [["Peruvian Pantry Staples", "Market price"], ["Ecuadorian Specialty Products", "Market price"], ["Fresh Produce", "By lb"], ["Snacks & Candy", "From $1.99"]]],
     ],
   },
   es: {
     title: "Menu y favoritos del mercado.",
     subtitle: "Sandwiches de desayuno, bebidas de fruta natural, productos latinos y abarrotes diarios. La disponibilidad puede variar.",
     categories: [
-      ["Desayuno", "De 7:00 AM a 2:00 PM", ["Sandwich de Tocino, Huevo y Queso", "Sandwich de Jamon y Queso", "Sandwich de Huevo y Queso", "Sandwich BLT"]],
-      ["Jugos Frescos", "Preparados diariamente con fruta natural", ["Potenciador Cerebral", "Verde Citrico", "Pepino Limon", "Zing de Jengibre"]],
-      ["Batidos y Bebidas", "Frias, frescas y listas", ["Batidos de Fruta Natural", "Batidos", "Cafe", "Cervezas y Bebidas"]],
-      ["Productos Latinos", "Especialidades peruanas y ecuatorianas", ["Productos Basicos Peruanos", "Productos Especiales Ecuatorianos", "Frutas y Verduras Frescas", "Snacks y Dulces"]],
+      ["Desayuno", "De 7:00 AM a 2:00 PM", [["Sandwich de Tocino, Huevo y Queso", "$5.99"], ["Sandwich de Jamon y Queso", "$5.49"], ["Sandwich de Huevo y Queso", "$4.49"], ["Sandwich BLT", "$6.49"]]],
+      ["Jugos Frescos", "Preparados diariamente con fruta natural", [["Potenciador Cerebral", "$6.99"], ["Verde Citrico", "$6.99"], ["Pepino Limon", "$6.99"], ["Zing de Jengibre", "$6.99"]]],
+      ["Batidos y Bebidas", "Frias, frescas y listas", [["Batidos de Fruta Natural", "$7.49"], ["Batidos", "$6.99"], ["Cafe", "$2.00"], ["Cervezas y Bebidas", "Desde $2.50"]]],
+      ["Productos Latinos", "Especialidades peruanas y ecuatorianas", [["Productos Basicos Peruanos", "Precio tienda"], ["Productos Especiales Ecuatorianos", "Precio tienda"], ["Frutas y Verduras Frescas", "Por lb"], ["Snacks y Dulces", "Desde $1.99"]]],
     ],
   },
 }
@@ -49,10 +49,12 @@ export default function MenuPage() {
               </span>
             </div>
             <ul className="mt-8 space-y-3">
-              {(items as string[]).map((item, itemIndex) => (
+              {(items as [string, string][]).map(([item, price], itemIndex) => (
                 <li key={item} className={`scroll-reveal flex items-center justify-between gap-4 border-t pt-3 text-sm font-bold ${index === 0 ? "border-white/14" : "border-emerald-900/10"}`} style={{ animationDelay: `${itemIndex * 50}ms` }}>
                   <span>{item}</span>
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-yellow-300" />
+                  <span className={`${index === 0 ? "bg-yellow-300 text-emerald-950" : "bg-emerald-50 text-emerald-950"} shrink-0 rounded-full px-3 py-1 text-xs font-black`}>
+                    {price}
+                  </span>
                 </li>
               ))}
             </ul>
