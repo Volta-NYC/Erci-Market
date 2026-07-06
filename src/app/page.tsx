@@ -183,7 +183,7 @@ export default function HomePage() {
                   <span className="font-display text-4xl font-extrabold text-emerald-950/10">0{index + 1}</span>
                 </div>
                 {index === 1 ? (
-                  <div className="scroll-image-wipe mb-6 h-40 overflow-hidden rounded-xl border border-emerald-900/10 bg-emerald-950 shadow-sm">
+                  <div className="mb-6 h-40 overflow-hidden rounded-xl border border-emerald-900/10 bg-emerald-950 shadow-sm">
                     <img src={images.juice} alt="Fresh juices at ERCI Market" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                   </div>
                 ) : null}
@@ -244,7 +244,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="scroll-image-wipe overflow-hidden rounded-[28px] border border-emerald-900/10 bg-white shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
+        <div className="scroll-reveal-right overflow-hidden rounded-[28px] border border-emerald-900/10 bg-white shadow-[0_24px_70px_rgba(4,47,46,0.12)]">
           <iframe
             title="Map to ERCI Market Corp"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14891.493340677516!2d-73.8764388!3d40.6833709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25dfd7c0e608d%3A0x317cbb70dab50b57!2sERCI%20MARKET%20CORP!5e1!3m2!1sen!2sus!4v1779333373240!5m2!1sen!2sus"
